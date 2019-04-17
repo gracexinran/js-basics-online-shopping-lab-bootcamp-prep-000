@@ -72,7 +72,16 @@ function total(){
 //   }
 //   return "That item is not in your cart.";
 // }
-//
+function removeFromCart(item){
+  for(var i=0; i<=getCart().length; i++){
+    if(i === getCart().length){
+      return "This item is not in your cart."
+    }
+    else if(getCart()[i].itemName === item){
+      return getCart().slice(0);
+    }
+  }
+}
 //
 // function placeOrder(cardNumber) {
 //   if(cardNumber>0){
