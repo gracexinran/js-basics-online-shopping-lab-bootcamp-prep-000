@@ -78,7 +78,7 @@ function removeFromCart(item){
       return "That item is not in your cart."
     }
     else if(getCart()[i].itemName === item){
-      return getCart().slice(i,1);
+      return getCart().splice(i,1);
     }
   }
 }
