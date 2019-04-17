@@ -60,7 +60,7 @@ function viewCart(){
 function total(){
   var totalprice = 0;
   for(var i=0; i<getCart().length; i++){
-    totalprice += parseInt(getCart()[i].itemPrice);
+    totalprice += getCart()[i].itemPrice;
   };
   return totalprice;
 }
