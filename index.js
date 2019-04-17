@@ -36,6 +36,20 @@ function addToCart(item){
 //   }
 // }
 //
+function viewCart(){
+  var yourcart = "";
+  if(!getCart().length){
+    return "Your shopping cart is empty.";
+  }else if(getCart().length === 1){
+    return `In your cart, you have ${getCart()[0].itemName at $${getCart()[0].itemPrice}.}`
+  }else{
+    for(var i=0; i<getCart().length-1;i++){
+      yourcart += `${getCart()[i].itemName} at $${getCart()[i].itemPrice}, `
+    };
+    return `In your cart, you have ${yourcart}and ${getCart()[getCart().length-1].itemName} at $${getCart()[getCart().length-1].itemPrice}.`;
+  }
+}
+
 // function total() {
 //   var total = 0;
 //   for(var i=0;i<getCart().length;i++){
