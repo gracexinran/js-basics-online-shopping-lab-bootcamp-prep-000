@@ -64,24 +64,24 @@ function total(){
   };
   return totalprice;
 }
-// function removeFromCart(item) {
-//   for (var i=0; i<getCart().length; i++){
-//   if(getCart()[i].itemName === item){
-//       return getCart().splice(i,1);
-//     }
-//   }
-//   return "That item is not in your cart.";
-// }
-function removeFromCart(item){
-  for(var i=0; i<=getCart().length; i++){
-    if(i === getCart().length){
-      return "That item is not in your cart."
-    }
-    else if(getCart()[i].itemName === item){
+function removeFromCart(item) {
+  for (var i=0; i<getCart().length; i++){
+  if(getCart()[i].itemName === item){
       return getCart().splice(i,1);
     }
   }
+  return "That item is not in your cart.";
 }
+// function removeFromCart(item){
+//   for(var i=0; i<=getCart().length; i++){
+//     if(i === getCart().length){
+//       return "That item is not in your cart."
+//     }
+//     else if(getCart()[i].itemName === item){
+//       return getCart().splice(i,1);
+//     }
+//   }
+// }
 //
 // function placeOrder(cardNumber) {
 //   if(cardNumber>0){
@@ -92,3 +92,13 @@ function removeFromCart(item){
 //     return "Sorry, we don't have a credit card on file for you.";
 //   }
 // }
+function placeOrder(creditcard){
+  if(!creditcard){
+    return "Sorry, we don't have a credit card on file for you."
+  }
+  else {
+    totalprice = total();
+    getCart().splice(0,0);
+    return `Your total cost is ${totalprice}, which will be charged to the card ${creditcard}.`
+  }
+}
