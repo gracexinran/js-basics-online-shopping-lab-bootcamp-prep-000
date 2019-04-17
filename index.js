@@ -57,7 +57,13 @@ function viewCart(){
 //   };
 //   return total;
 // }
-//
+function total(){
+  var totalprice = 0;
+  for(var i=0; i<getCart().length; i++){
+    totalprice += parseInt(getCart()[i].itemPrice);
+  };
+  return totalprice;
+}
 // function removeFromCart(item) {
 //   for (var i=0; i<getCart().length; i++){
 //   if(getCart()[i].itemName === item){
